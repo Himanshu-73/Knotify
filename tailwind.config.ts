@@ -52,6 +52,12 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				// Custom friendship colors
+				'gift-primary': 'hsl(var(--gift-primary))',
+				'gift-secondary': 'hsl(var(--gift-secondary))',
+				'friendship-pink': 'hsl(var(--friendship-pink))',
+				'friendship-blue': 'hsl(var(--friendship-blue))',
+				'friendship-green': 'hsl(var(--friendship-green))',
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -84,11 +90,46 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'gift-bounce': {
+					'0%, 100%': {
+						transform: 'translateY(0) scale(1)',
+						animationTimingFunction: 'cubic-bezier(0.8, 0, 1, 1)'
+					},
+					'50%': {
+						transform: 'translateY(-10px) scale(1.05)',
+						animationTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)'
+					}
+				},
+				'confetti': {
+					'0%': { transform: 'translateY(0) rotate(0deg)', opacity: 1 },
+					'100%': { transform: 'translateY(-100vh) rotate(360deg)', opacity: 0 }
+				},
+				'fade-in-up': {
+					'0%': {
+						opacity: '0',
+						transform: 'translateY(30px)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'translateY(0)'
+					}
+				},
+				'pulse-heart': {
+					'0%, 100%': { transform: 'scale(1)' },
+					'50%': { transform: 'scale(1.1)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'gift-bounce': 'gift-bounce 2s infinite',
+				'confetti': 'confetti 3s ease-out forwards',
+				'fade-in-up': 'fade-in-up 0.6s ease-out',
+				'pulse-heart': 'pulse-heart 1.5s ease-in-out infinite'
+			},
+			fontFamily: {
+				'playful': ['Comic Neue', 'Quicksand', 'Poppins', 'sans-serif'],
 			}
 		}
 	},
