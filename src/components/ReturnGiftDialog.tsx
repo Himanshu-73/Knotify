@@ -13,7 +13,7 @@ export const ReturnGiftDialog = ({ open, onOpenChange }: ReturnGiftDialogProps) 
 
   const handleDonate = () => {
     // In a real app, this would integrate with a payment gateway
-    alert(`Thank you for wanting to donate ₹${amount}! This is a demo - no actual payment was processed. 💝`);
+    alert(`Thank you for wanting to donate ₹${amount}! This is a demo, and no actual payment was processed. Best thing you can give me is a call whenever you are free, and if you still need to return, you know my number 😉💝`);
     onOpenChange(false);
   };
 
@@ -48,7 +48,7 @@ export const ReturnGiftDialog = ({ open, onOpenChange }: ReturnGiftDialogProps) 
               />
             </div>
             <div className="flex gap-2 justify-center mb-4">
-              {[50, 100, 200, 500].map((preset) => (
+              {[50, 100, 169, 420].map((preset) => (
                 <button
                   key={preset}
                   onClick={() => setAmount(preset.toString())}
