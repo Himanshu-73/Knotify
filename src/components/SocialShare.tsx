@@ -5,14 +5,14 @@ export const SocialShare = () => {
   const shareText = "Check out this amazing friendship surprise on Knotify! 🎁💝";
 
   const shareOnLinkedIn = () => {
-    const linkedInUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`;
+    const linkedInUrl = `https://www.linkedin.com/in/himanshu-sahu-b65136276/shareArticle?mini=true&url=${encodeURIComponent(shareUrl)}`;
     window.open(linkedInUrl, '_blank', 'width=600,height=400');
   };
 
   const shareOnInstagram = () => {
     // Instagram doesn't have direct URL sharing, so we'll copy to clipboard with instructions
     navigator.clipboard.writeText(`${shareText} ${shareUrl}`);
-    alert('Link copied! Share this on Instagram in your story or post 📸');
+    window.open('https://www.instagram.com/savvy.himanshu?igsh=MTZ0d3cyb3ppeHNtNQ==', '_blank');
   };
 
   return (
