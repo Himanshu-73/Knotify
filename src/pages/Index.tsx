@@ -4,7 +4,7 @@ import { useToast } from '@/hooks/use-toast';
 import { ConfettiAnimation } from '@/components/ConfettiAnimation';
 import { SocialShare } from '@/components/SocialShare';
 import { ReturnGiftDialog } from '@/components/ReturnGiftDialog';
-import { Copy, Gift, Heart } from 'lucide-react';
+import { Copy, Gift, Heart, RotateCcw } from 'lucide-react';
 import giftBoxImage from '@/assets/gift-box.png';
 import friendshipBandImage from '@/assets/friendship-band.png';
 
@@ -45,16 +45,32 @@ const Index = () => {
     }
   };
 
+  const handleReset = () => {
+    setIsUnwrapped(false);
+    setShowConfetti(false);
+  };
+
   return (
     <div className="min-h-screen" style={{ background: 'var(--gradient-background)' }}>
       <ConfettiAnimation trigger={showConfetti} onComplete={() => setShowConfetti(false)} />
       
       <div className="container mx-auto px-4 py-8 flex flex-col min-h-screen">
         {/* Header */}
-        <header className="text-center mb-8">
-          <h1 className="font-playful text-4xl md:text-6xl font-bold text-foreground mb-4">
+        <header className="text-center mb-8 relative">
+          <h1 className="font-playful text-4xl md:text-6xl font-bold bg-gradient-to-r from-gift-primary via-friendship-blue to-friendship-green bg-clip-text text-transparent mb-4 animate-fade-in-up">
             Knotify
           </h1>
+          {isUnwrapped && (
+            <Button
+              onClick={handleReset}
+              variant="outline"
+              size="sm"
+              className="absolute top-0 right-4 border-muted-foreground/30 text-muted-foreground hover:bg-secondary/20 rounded-full"
+            >
+              <RotateCcw className="w-4 h-4 mr-2" />
+              Reset
+            </Button>
+          )}
           {!isUnwrapped && (
             <p className="font-playful text-lg md:text-xl text-muted-foreground animate-fade-in-up">
               Click to unwrap your friendship surprise! 🎁
@@ -91,7 +107,7 @@ const Index = () => {
                 className="w-full max-w-md mx-auto rounded-2xl shadow-lg border-4 border-white/50"
               />
               
-              <div className="bg-card/80 backdrop-blur-sm rounded-2xl p-6 border border-friendship-pink/20 shadow-xl">
+              <div className="bg-card/60 backdrop-blur-md rounded-3xl p-8 border border-white/10 shadow-2xl" style={{ background: 'var(--gradient-glass)' }}>
                 <h2 className="font-playful text-2xl md:text-3xl font-bold text-foreground mb-4 flex items-center justify-center gap-2">
                   <Heart className="w-6 h-6 text-gift-primary animate-pulse-heart" />
                   Happy Friendship Day!

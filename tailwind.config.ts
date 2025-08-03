@@ -129,7 +129,7 @@ export default {
 				'pulse-heart': 'pulse-heart 1.5s ease-in-out infinite'
 			},
 			fontFamily: {
-				'playful': ['Comic Neue', 'Quicksand', 'Poppins', 'sans-serif'],
+				'playful': ['Inter', 'Poppins', 'sans-serif'],
 			}
 		}
 	},
