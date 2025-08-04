@@ -57,7 +57,7 @@ const HeadManager: React.FC = () => {
 
     // IBM Watson Assistant Chatbot
     (window as any).watsonAssistantChatOptions = {
-      integrationID: "159088f7-4374-4c9e-a5b3-345d0e557c7f", // The ID of this integration.
+      integrationID: "159088f7-4374-4c9e-a5b3-345d0e557c7f", // The ID of this integration
       region: "jp-tok", // The region your integration is hosted in.
       serviceInstanceID: "be987c4d-6626-4467-8cdd-ca840e727f4d", // The ID of your service instance.
       onLoad: async (instance: any) => { await instance.render(); }
